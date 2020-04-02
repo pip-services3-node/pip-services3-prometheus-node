@@ -147,7 +147,7 @@ export class PrometheusCounters extends CachedCounters implements IReferenceable
             let instance = this._instance || os.hostname();
             this._requestRoute = "/metrics/job/" + job + "/instance/" + instance;
 
-            let restify = require('restify');
+            let restify = require('restify-clients');
             this._client = restify.createStringClient({ url: connection.getUri() });
 
             if (callback) callback(null);
