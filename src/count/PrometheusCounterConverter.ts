@@ -76,9 +76,28 @@ export class PrometheusCounterConverter {
         let nameParts = counter.name.split('.');
 
         // If there are other predictable names from which we can parse labels, we can add them below
-        if (nameParts.length >= 3 && nameParts[2] == "exec_time") {
+        if ((nameParts.length >= 3 && nameParts[2] == "exec_count")
+            || (nameParts.length >= 3 && nameParts[2] == "exec_time")
+            || (nameParts.length >= 3 && nameParts[2] == "exec_errors")
+        ) {
             labels["service"] = nameParts[0];
             labels["command"] = nameParts[1];
+        }
+
+        if ((nameParts.length >= 4 && nameParts[3] == "call_count")
+            || (nameParts.length >= 4 && nameParts[3] == "call_time")
+            || (nameParts.length >= 4 && nameParts[3] == "call_errors")
+        ) {
+            labels["service"] = nameParts[1];
+            labels["command"] = nameParts[2];
+            labels["target"] = nameParts[0];
+        }
+
+        if ((nameParts.length >= 3 && nameParts[2] == "sent_messages")
+            || (nameParts.length >= 3 && nameParts[2] == "received_messages")
+            || (nameParts.length >= 3 && nameParts[2] == "dead_messages")
+        ) {
+            labels["queue"] = nameParts[1];
         }
 
         if (_.isEmpty(labels)) return "";
@@ -99,8 +118,23 @@ export class PrometheusCounterConverter {
         let nameParts = counter.name.split('.');
 
         // If there are other predictable names from which we can parse labels, we can add them below
-        if (nameParts.length >= 3 && nameParts[2] == "exec_time") {
-            return nameParts[2];
+        // Rest Service Labels
+        if (nameParts.length >= 3 && nameParts[2] == "exec_count") { return nameParts[2]; }
+        if (nameParts.length >= 3 && nameParts[2] == "exec_time") { return nameParts[2]; }
+        if (nameParts.length >= 3 && nameParts[2] == "exec_errors") { return nameParts[2]; }
+
+        // Rest & Direct Client Labels
+        if (nameParts.length >= 4 && nameParts[3] == "call_count") { return nameParts[3]; }
+        if (nameParts.length >= 4 && nameParts[3] == "call_time") { return nameParts[3]; }
+        if (nameParts.length >= 4 && nameParts[3] == "call_errors") { return nameParts[3]; }
+
+        // Queue Labels
+        if ((nameParts.length >= 3 && nameParts[2] == "sent_messages")
+            || (nameParts.length >= 3 && nameParts[2] == "received_messages")
+            || (nameParts.length >= 3 && nameParts[2] == "dead_messages")
+        ) {
+            let name = `${nameParts[0]}.${nameParts[2]}`;
+            return name.toLowerCase().replace(".", "_").replace("/", "_");
         }
 
         // TODO: are there other assumptions we can make?
