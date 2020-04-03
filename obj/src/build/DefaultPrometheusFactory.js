@@ -22,8 +22,8 @@ class DefaultPrometheusFactory extends pip_services3_components_node_1.Factory {
         this.registerAsType(DefaultPrometheusFactory.PrometheusMetricsServiceDescriptor, PrometheusMetricsService_1.PrometheusMetricsService);
     }
 }
+exports.DefaultPrometheusFactory = DefaultPrometheusFactory;
 DefaultPrometheusFactory.Descriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "factory", "prometheus", "default", "1.0");
 DefaultPrometheusFactory.PrometheusCountersDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "counters", "prometheus", "*", "1.0");
 DefaultPrometheusFactory.PrometheusMetricsServiceDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "metrics-service", "prometheus", "*", "1.0");
-exports.DefaultPrometheusFactory = DefaultPrometheusFactory;
 //# sourceMappingURL=DefaultPrometheusFactory.js.map

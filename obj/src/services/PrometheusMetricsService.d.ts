@@ -1,7 +1,7 @@
 import { IReferences } from 'pip-services3-commons-node';
 import { RestService } from 'pip-services3-rpc-node';
 /**
- * Service that exposes <code>"/metrics"</code> route for Prometheus to scap performance metrics.
+ * Service that exposes the <code>"/metrics"</code> and <code>"/metricsandreset"</code> routes for Prometheus to scap performance metrics.
  *
  * ### Configuration parameters ###
  *
@@ -64,4 +64,12 @@ export declare class PrometheusMetricsService extends RestService {
      * @param res   an HTTP response
      */
     private metrics;
+    /**
+     * Handles metricsandreset requests.
+     * The counters will be returned and then zeroed out.
+     *
+     * @param req   an HTTP request
+     * @param res   an HTTP response
+     */
+    private metricsAndReset;
 }

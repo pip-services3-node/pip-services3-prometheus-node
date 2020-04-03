@@ -126,7 +126,7 @@ class PrometheusCounters extends pip_services3_components_node_1.CachedCounters 
             let job = this._source || "unknown";
             let instance = this._instance || os.hostname();
             this._requestRoute = "/metrics/job/" + job + "/instance/" + instance;
-            let restify = require('restify');
+            let restify = require('restify-clients');
             this._client = restify.createStringClient({ url: connection.getUri() });
             if (callback)
                 callback(null);

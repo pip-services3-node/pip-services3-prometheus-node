@@ -5,7 +5,7 @@ const pip_services3_commons_node_1 = require("pip-services3-commons-node");
 const pip_services3_rpc_node_1 = require("pip-services3-rpc-node");
 const PrometheusCounterConverter_1 = require("../count/PrometheusCounterConverter");
 /**
- * Service that exposes <code>"/metrics"</code> route for Prometheus to scap performance metrics.
+ * Service that exposes the <code>"/metrics"</code> and <code>"/metricsandreset"</code> routes for Prometheus to scap performance metrics.
  *
  * ### Configuration parameters ###
  *
@@ -63,16 +63,19 @@ class PrometheusMetricsService extends pip_services3_rpc_node_1.RestService {
         if (this._cachedCounters == null)
             this._cachedCounters = this._dependencyResolver.getOneOptional("cached-counters");
         let contextInfo = references.getOneOptional(new pip_services3_commons_node_1.Descriptor("pip-services", "context-info", "default", "*", "1.0"));
-        if (contextInfo != null && this._source == "")
+        if (contextInfo != null && (this._source == "" || this._source == undefined)) {
             this._source = contextInfo.name;
-        if (contextInfo != null && this._instance == "")
+        }
+        if (contextInfo != null && (this._instance == "" || this._instance == undefined)) {
             this._instance = contextInfo.contextId;
+        }
     }
     /**
      * Registers all service routes in HTTP endpoint.
      */
     register() {
         this.registerRoute("get", "metrics", null, (req, res) => { this.metrics(req, res); });
+        this.registerRoute("get", "metricsandreset", null, (req, res) => { this.metricsAndReset(req, res); });
     }
     /**
      * Handles metrics requests
@@ -83,6 +86,23 @@ class PrometheusMetricsService extends pip_services3_rpc_node_1.RestService {
     metrics(req, res) {
         let counters = this._cachedCounters != null ? this._cachedCounters.getAll() : null;
         let body = PrometheusCounterConverter_1.PrometheusCounterConverter.toString(counters, this._source, this._instance);
+        res.setHeader('content-type', 'text/plain');
+        res.statusCode = 200;
+        res.end(body);
+    }
+    /**
+     * Handles metricsandreset requests.
+     * The counters will be returned and then zeroed out.
+     *
+     * @param req   an HTTP request
+     * @param res   an HTTP response
+     */
+    metricsAndReset(req, res) {
+        let counters = this._cachedCounters != null ? this._cachedCounters.getAll() : null;
+        let body = PrometheusCounterConverter_1.PrometheusCounterConverter.toString(counters, this._source, this._instance);
+        if (this._cachedCounters != null) {
+            this._cachedCounters.clearAll();
+        }
         res.setHeader('content-type', 'text/plain');
         res.statusCode = 200;
         res.end(body);

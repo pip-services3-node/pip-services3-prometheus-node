@@ -9,7 +9,7 @@ import { Descriptor } from 'pip-services3-commons-node';
  * @see [[PrometheusMetricsService]]
  */
 export declare class DefaultPrometheusFactory extends Factory {
-    static readonly Descriptor: Descriptor;
+    static readonly Descriptor: any;
     static readonly PrometheusCountersDescriptor: Descriptor;
     static readonly PrometheusMetricsServiceDescriptor: Descriptor;
     /**
