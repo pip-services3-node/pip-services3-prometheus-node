@@ -76,10 +76,13 @@ export class PrometheusMetricsService extends RestService {
 
         let contextInfo = references.getOneOptional<ContextInfo>(
             new Descriptor("pip-services", "context-info", "default", "*", "1.0"));
-        if (contextInfo != null && this._source == "")
+
+        if (contextInfo != null && (this._source == "" || this._source == undefined)) {
             this._source = contextInfo.name;
-        if (contextInfo != null && this._instance == "")
+        }
+        if (contextInfo != null && (this._instance == "" || this._instance == undefined)) {
             this._instance = contextInfo.contextId;
+        }
     }
 
     /**
