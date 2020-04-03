@@ -10,14 +10,14 @@ import { PrometheusCounters } from '../count/PrometheusCounters';
 import { PrometheusCounterConverter } from '../count/PrometheusCounterConverter';
 
 /**
- * Service that exposes <code>"/metrics"</code> route for Prometheus to scap performance metrics.
+ * Service that exposes the <code>"/metrics"</code> and <code>"/metricsandreset"</code> routes for Prometheus to scap performance metrics.
  * 
  * ### Configuration parameters ###
  * 
  * - dependencies:
  *   - endpoint:              override for HTTP Endpoint dependency
  *   - prometheus-counters:   override for PrometheusCounters dependency
- * - connection(s):           
+ * - connection(s):
  *   - discovery_key:         (optional) a key to retrieve the connection from IDiscovery
  *   - protocol:              connection protocol: http or https
  *   - host:                  host name or IP address
@@ -76,10 +76,13 @@ export class PrometheusMetricsService extends RestService {
 
         let contextInfo = references.getOneOptional<ContextInfo>(
             new Descriptor("pip-services", "context-info", "default", "*", "1.0"));
-        if (contextInfo != null && this._source == "")
+
+        if (contextInfo != null && (this._source == "" || this._source == undefined)) {
             this._source = contextInfo.name;
-        if (contextInfo != null && this._instance == "")
+        }
+        if (contextInfo != null && (this._instance == "" || this._instance == undefined)) {
             this._instance = contextInfo.contextId;
+        }
     }
 
     /**
@@ -87,6 +90,7 @@ export class PrometheusMetricsService extends RestService {
      */
     public register(): void {
         this.registerRoute("get", "metrics", null, (req, res) => { this.metrics(req, res); });
+        this.registerRoute("get", "metricsandreset", null, (req, res) => { this.metricsAndReset(req, res); });
     }
 
     /**
@@ -98,6 +102,26 @@ export class PrometheusMetricsService extends RestService {
     private metrics(req, res): void {
         let counters = this._cachedCounters != null ? this._cachedCounters.getAll() : null;
         let body = PrometheusCounterConverter.toString(counters, this._source, this._instance);
+
+        res.setHeader('content-type', 'text/plain');
+        res.statusCode = 200;
+        res.end(body);
+    }
+
+    /**
+     * Handles metricsandreset requests.
+     * The counters will be returned and then zeroed out.
+     *
+     * @param req   an HTTP request
+     * @param res   an HTTP response
+     */
+    private metricsAndReset(req, res): void {
+        let counters = this._cachedCounters != null ? this._cachedCounters.getAll() : null;
+        let body = PrometheusCounterConverter.toString(counters, this._source, this._instance);
+
+        if (this._cachedCounters != null) {
+            this._cachedCounters.clearAll();
+        }
 
         res.setHeader('content-type', 'text/plain');
         res.statusCode = 200;
