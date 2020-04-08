@@ -72,13 +72,14 @@ export class PrometheusCounters extends CachedCounters implements IReferenceable
     private _opened: boolean = false;
     private _source: string;
     private _instance: string;
+    private _pushEnabled: boolean;
     private _client: any;
     private _requestRoute: string;
 
     /**
      * Creates a new instance of the performance counters.
      */
-    public constructor() { 
+    public constructor() {
         super();
     }
 
@@ -93,6 +94,7 @@ export class PrometheusCounters extends CachedCounters implements IReferenceable
         this._connectionResolver.configure(config);
         this._source = config.getAsStringWithDefault("source", this._source);
         this._instance = config.getAsStringWithDefault("instance", this._instance);
+        this._pushEnabled = config.getAsBooleanWithDefault("push_enabled", true);
     }
 
     /**
@@ -130,6 +132,12 @@ export class PrometheusCounters extends CachedCounters implements IReferenceable
     public open(correlationId: string, callback: (err: any) => void): void {
         if (this._opened) {
             if (callback) callback(null);
+            return;
+        }
+
+        if (!this._pushEnabled) {
+            if(callback)
+                callback(null);
             return;
         }
 
@@ -174,7 +182,7 @@ export class PrometheusCounters extends CachedCounters implements IReferenceable
      * @param counters      current counters measurements to be saves.
      */
     protected save(counters: Counter[]): void {
-        if (this._client == null) return;
+        if (this._client == null || !this._pushEnabled) return;
 
         let body = PrometheusCounterConverter.toString(counters, null, null);
 
