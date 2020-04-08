@@ -61,6 +61,7 @@ export declare class PrometheusCounters extends CachedCounters implements IRefer
     private _opened;
     private _source;
     private _instance;
+    private _pushEnabled;
     private _client;
     private _requestRoute;
     /**

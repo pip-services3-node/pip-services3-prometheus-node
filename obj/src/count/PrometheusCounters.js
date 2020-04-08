@@ -79,6 +79,7 @@ class PrometheusCounters extends pip_services3_components_node_1.CachedCounters 
         this._connectionResolver.configure(config);
         this._source = config.getAsStringWithDefault("source", this._source);
         this._instance = config.getAsStringWithDefault("instance", this._instance);
+        this._pushEnabled = config.getAsBooleanWithDefault("push_enabled", true);
     }
     /**
      * Sets references to dependent components.
@@ -110,6 +111,11 @@ class PrometheusCounters extends pip_services3_components_node_1.CachedCounters 
      */
     open(correlationId, callback) {
         if (this._opened) {
+            if (callback)
+                callback(null);
+            return;
+        }
+        if (!this._pushEnabled) {
             if (callback)
                 callback(null);
             return;
@@ -151,7 +157,7 @@ class PrometheusCounters extends pip_services3_components_node_1.CachedCounters 
      * @param counters      current counters measurements to be saves.
      */
     save(counters) {
-        if (this._client == null)
+        if (this._client == null || !this._pushEnabled)
             return;
         let body = PrometheusCounterConverter_1.PrometheusCounterConverter.toString(counters, null, null);
         this._client.put(this._requestRoute, body, (err, req, res, data) => {
