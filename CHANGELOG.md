@@ -1,5 +1,11 @@
 # Prometheus components for Pip.Services in Node.js Changelog
 
+
+## <a name="3.0.5"></a> 3.0.5 (2020-04-08) 
+
+### Bug fixes
+* Fixed enabling/disabling of metrics pushing by a configuration parameter
+
 ## <a name="3.0.4"></a> 3.0.4 (2020-04-04) 
 
 ### Features
