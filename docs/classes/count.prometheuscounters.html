@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PrometheusCounters | pip-services-prometheus-node</title>
+	<title>PrometheusCounters | pip-services3-prometheus-node</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">pip-services-prometheus-node</a>
+					<a href="../index.html" class="title">pip-services3-prometheus-node</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -77,7 +77,7 @@
 					<h3 id="configuration-parameters">Configuration parameters</h3>
 					<ul>
 						<li>connection(s):<ul>
-								<li>discovery_key:         (optional) a key to retrieve the connection from <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html" class="external">IDiscovery</a></li>
+								<li>discovery_key:         (optional) a key to retrieve the connection from <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html" class="external">IDiscovery</a></li>
 								<li>protocol:              connection protocol: http or https</li>
 								<li>host:                  host name or IP address</li>
 								<li>port:                  port number</li>
@@ -93,16 +93,16 @@
 					</ul>
 					<h3 id="references">References</h3>
 					<ul>
-						<li><code>*:logger:*:*:1.0</code>         (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/log.ilogger.html" class="external">ILogger</a> components to pass log messages</li>
-						<li><code>*:counters:*:*:1.0</code>         (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/count.icounters.html" class="external">ICounters</a> components to pass collected measurements</li>
-						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> services to resolve connection</li>
+						<li><code>*:logger:*:*:1.0</code>           (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/log.ilogger.html" class="external">ILogger</a> components to pass log messages</li>
+						<li><code>*:counters:*:*:1.0</code>         (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/count.icounters.html" class="external">ICounters</a> components to pass collected measurements</li>
+						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> services to resolve connection</li>
 					</ul>
 					<dl class="tsd-comment-tags">
 						<dt>see</dt>
-						<dd><p><a href="https://rawgit.com/pip-services-node/pip-services3-rpc-node/master/doc/api/classes/services.restservice.html" class="external">RestService</a></p>
+						<dd><p><a href="https://pip-services3-node.github.io/pip-services3-rpc-node/classes/services.restservice.html" class="external">RestService</a></p>
 						</dd>
 						<dt>see</dt>
-						<dd><p><a href="https://rawgit.com/pip-services-node/pip-services3-rpc-node/master/doc/api/classes/services.commandablehttpservice.html" class="external">CommandableHttpService</a></p>
+						<dd><p><a href="https://pip-services3-node.github.io/pip-services3-rpc-node/classes/services.commandablehttpservice.html" class="external">CommandableHttpService</a></p>
 							<h3 id="example">Example</h3>
 							<pre><code>let <span class="hljs-keyword">counters</span> = new PrometheusCounters();
 <span class="hljs-keyword">counters</span>.configure(ConfigParams.<span class="hljs-keyword">from</span>Tuples(
@@ -132,10 +132,15 @@ try {
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">CachedCounters</span>
+						<a href="count.prometheuscounters.html" class="tsd-signature-type">PrometheusCounters</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">PrometheusCounters</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="count.prometheuscounters.html" class="tsd-signature-type">PrometheusCounters</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -144,11 +149,8 @@ try {
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">ICounters</span></li>
-					<li><span class="tsd-signature-type">IReconfigurable</span></li>
-					<li><span class="tsd-signature-type">ITimingCallback</span></li>
-					<li><span class="tsd-signature-type">IReferenceable</span></li>
-					<li><span class="tsd-signature-type">IOpenable</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -161,43 +163,15 @@ try {
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="count.prometheuscounters.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_cache" class="tsd-kind-icon">_cache</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_interval" class="tsd-kind-icon">_interval</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_lastdumptime" class="tsd-kind-icon">_last<wbr>Dump<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_lastresettime" class="tsd-kind-icon">_last<wbr>Reset<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_resettimeout" class="tsd-kind-icon">_reset<wbr>Timeout</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#_updated" class="tsd-kind-icon">_updated</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#cachedcounters" class="tsd-kind-icon">Cached<wbr>Counters</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#begintiming" class="tsd-kind-icon">begin<wbr>Timing</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#clearall" class="tsd-kind-icon">clear<wbr>All</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="count.prometheuscounters.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="count.prometheuscounters.html#configure" class="tsd-kind-icon">configure</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#dump" class="tsd-kind-icon">dump</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#endtiming" class="tsd-kind-icon">end<wbr>Timing</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#getinterval" class="tsd-kind-icon">get<wbr>Interval</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#increment" class="tsd-kind-icon">increment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#incrementone" class="tsd-kind-icon">increment<wbr>One</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="count.prometheuscounters.html#configure" class="tsd-kind-icon">configure</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="count.prometheuscounters.html#isopen" class="tsd-kind-icon">is<wbr>Open</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#last" class="tsd-kind-icon">last</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="count.prometheuscounters.html#open" class="tsd-kind-icon">open</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="count.prometheuscounters.html#save" class="tsd-kind-icon">save</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#setinterval" class="tsd-kind-icon">set<wbr>Interval</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="count.prometheuscounters.html#save" class="tsd-kind-icon">save</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="count.prometheuscounters.html#setreferences" class="tsd-kind-icon">set<wbr>References</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#stats" class="tsd-kind-icon">stats</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#timestamp" class="tsd-kind-icon">timestamp</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="count.prometheuscounters.html#timestampnow" class="tsd-kind-icon">timestamp<wbr>Now</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="count.prometheuscounters.html#update" class="tsd-kind-icon">update</a></li>
 							</ul>
 						</section>
 					</div>
@@ -215,7 +189,7 @@ try {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L76">count/PrometheusCounters.ts:76</a></li>
+									<li>Defined in count/PrometheusCounters.ts:77</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -228,201 +202,8 @@ try {
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_cache" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _cache</h3>
-					<div class="tsd-signature tsd-kind-icon">_cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._cache</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:17</li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>id: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">Counter</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_interval" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _interval</h3>
-					<div class="tsd-signature tsd-kind-icon">_interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._interval</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:15</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_lastdumptime" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _last<wbr>Dump<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">_last<wbr>Dump<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._lastDumpTime</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:21</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_lastresettime" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _last<wbr>Reset<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">_last<wbr>Reset<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._lastResetTime</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:22</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_resettimeout" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _reset<wbr>Timeout</h3>
-					<div class="tsd-signature tsd-kind-icon">_reset<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._resetTimeout</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:16</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="_updated" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _updated</h3>
-					<div class="tsd-signature tsd-kind-icon">_updated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from CachedCounters._updated</p>
-						<ul>
-							<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:20</li>
-						</ul>
-					</aside>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="cachedcounters" class="tsd-anchor"></a>
-					<h3>Cached<wbr>Counters</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">Cached<wbr>Counters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.CachedCounters</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:26</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates a new CachedCounters object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="begintiming" class="tsd-anchor"></a>
-					<h3>begin<wbr>Timing</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">begin<wbr>Timing<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Timing</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.beginTiming</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:74</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates and starts a new [[Timing]], which will call this object&#39;s <a href="count.prometheuscounters.html#endtiming">endTiming</a>
-									method once timing stops.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[Timing]]</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to include in the callback.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Timing</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="clear" class="tsd-anchor"></a>
-					<h3>clear</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.clear</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:61</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Removes the [[Counter]] with the given name from this object&#39;s cache.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to remove.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="clearall" class="tsd-anchor"></a>
-					<h3>clear<wbr>All</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">clear<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.clearAll</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:65</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Removes all [[Counter Counters]] from this object&#39;s cache.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="close" class="tsd-anchor"></a>
 					<h3>close</h3>
@@ -433,7 +214,7 @@ try {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L163">count/PrometheusCounters.ts:163</a></li>
+									<li>Defined in count/PrometheusCounters.ts:171</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -478,18 +259,17 @@ try {
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="configure" class="tsd-anchor"></a>
 					<h3>configure</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">configure<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConfigParams</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides CachedCounters.configure</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L90">count/PrometheusCounters.ts:90</a></li>
+									<li>Defined in count/PrometheusCounters.ts:91</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,261 +290,6 @@ try {
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="dump" class="tsd-anchor"></a>
-					<h3>dump</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.dump</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:81</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Dumps the [[Counter Counters]] that are stored in this object&#39;s
-									cache to memory.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#save">save</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="endtiming" class="tsd-anchor"></a>
-					<h3>end<wbr>Timing</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">end<wbr>Timing<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, elapsed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.endTiming</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:123</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Method that is called by a [[Timing Timing]] once timing has ended.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#begintiming">beginTiming</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter that was being timed.</p>
-									</div>
-								</li>
-								<li>
-									<h5>elapsed: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the time elapsed since timing began.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="get" class="tsd-anchor"></a>
-					<h3>get</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CounterType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Counter</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.get</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:113</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Looks for a [[Counter]] with the given name and type within this object&#39;s
-										cache. If none are found, then a new [[Counter]] of the given
-									[[CounterType type]] is created, added to the cache, and returned.</p>
-								</div>
-								<p>If the need for cache resetting is detected, calling this method will
-								trigger the reset.</p>
-								<dl class="tsd-comment-tags">
-									<dt>throws</dt>
-									<dd><p>an Error if name is <code>null</code></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to retrieve.</p>
-									</div>
-								</li>
-								<li>
-									<h5>type: <span class="tsd-signature-type">CounterType</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the counter&#39;s type.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Counter</span></h4>
-							<p>the counter found in the cache or the one created (if none were found).</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="getall" class="tsd-anchor"></a>
-					<h3>get<wbr>All</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Counter</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.getAll</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:98</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the [[Counter Counters]] that are stored in this object&#39;s cache.</p>
-								</div>
-								<p>If the need for cache resetting is detected, calling this method will
-								trigger the reset.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Counter</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>an array, containing all cached Counters.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="getinterval" class="tsd-anchor"></a>
-					<h3>get<wbr>Interval</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Interval<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.getInterval</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:31</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>this CachedCounters&#39; update interval. Used to dump the cache to memory at
-							regular intervals.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="increment" class="tsd-anchor"></a>
-					<h3>increment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">increment<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.increment</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:187</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Increments the named [[CounterType.Increment Incremental Counter]] by the
-									given value.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#get">get</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to increment.</p>
-									</div>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the value to increment the counter by.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="incrementone" class="tsd-anchor"></a>
-					<h3>increment<wbr>One</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">increment<wbr>One<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.incrementOne</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:176</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Incrementes the named [[CounterType.Increment Incremental Counter]] by 1.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#increment">increment</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to increment.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="isopen" class="tsd-anchor"></a>
 					<h3>is<wbr>Open</h3>
@@ -775,7 +300,7 @@ try {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L120">count/PrometheusCounters.ts:120</a></li>
+									<li>Defined in count/PrometheusCounters.ts:122</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -785,53 +310,6 @@ try {
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p>true if the component has been opened and false otherwise.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="last" class="tsd-anchor"></a>
-					<h3>last</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">last<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.last</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:146</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Updates the named [[CounterType.LastValue Last Counter]] by setting
-									its last value to the value given.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#get">get</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to update.</p>
-									</div>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the value to update the counter with.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -845,7 +323,7 @@ try {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L130">count/PrometheusCounters.ts:130</a></li>
+									<li>Defined in count/PrometheusCounters.ts:132</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -890,18 +368,17 @@ try {
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="save" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> save</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">save<span class="tsd-signature-symbol">(</span>counters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Counter</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides CachedCounters.save</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L176">count/PrometheusCounters.ts:176</a></li>
+									<li>Defined in count/PrometheusCounters.ts:184</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -922,39 +399,6 @@ try {
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setinterval" class="tsd-anchor"></a>
-					<h3>set<wbr>Interval</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Interval<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.setInterval</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:38</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets this CachedCounters&#39; update interval, which is used to dump the cache to memory
-									at regular intervals.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the value to set this CachedCounters&#39; update interval to.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setreferences" class="tsd-anchor"></a>
 					<h3>set<wbr>References</h3>
@@ -965,7 +409,7 @@ try {
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-prometheus-node/blob/93320ec/src/count/PrometheusCounters.ts#L103">count/PrometheusCounters.ts:103</a></li>
+									<li>Defined in count/PrometheusCounters.ts:105</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -982,171 +426,6 @@ try {
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="stats" class="tsd-anchor"></a>
-					<h3>stats</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">stats<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.stats</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:135</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Adds the given value to the named [[CounterType.Statistics Statistics Counter]]
-										and recalculates its statistics, taking into account the new value.
-									Statistics include last, count, min, max, and average.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#get">get</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to update.</p>
-									</div>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the value to update the counter with.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="timestamp" class="tsd-anchor"></a>
-					<h3>timestamp</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">timestamp<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.timestamp</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:167</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Updates the named [[CounterType.Timestamp Timestamp Counter&#39;s]] time to
-									the time given.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#get">get</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to update.</p>
-									</div>
-								</li>
-								<li>
-									<h5>value: <span class="tsd-signature-type">Date</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the timestamp to update the counter to.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="timestampnow" class="tsd-anchor"></a>
-					<h3>timestamp<wbr>Now</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">timestamp<wbr>Now<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.timestampNow</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:156</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Updates the named [[CounterType.Timestamp Timestamp Counter&#39;s]] time to
-									the current time.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>[[CounterType]]</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#timestamp">timestamp</a></p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the name of the counter to update.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="update" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from CachedCounters.update</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-prometheus-node/node_modules/pip-services3-components-node/obj/src/count/CachedCounters.d.ts:88</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks whether or not the update interval has passed (since the last
-									<a href="count.prometheuscounters.html#dump">dump</a> was performed) and, if it has, performs a <a href="count.prometheuscounters.html#dump">dump</a>.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="count.prometheuscounters.html#dump">dump</a></p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1186,92 +465,23 @@ try {
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_cache" class="tsd-kind-icon">_cache</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_interval" class="tsd-kind-icon">_interval</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_lastdumptime" class="tsd-kind-icon">_last<wbr>Dump<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_lastresettime" class="tsd-kind-icon">_last<wbr>Reset<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_resettimeout" class="tsd-kind-icon">_reset<wbr>Timeout</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#_updated" class="tsd-kind-icon">_updated</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#cachedcounters" class="tsd-kind-icon">Cached<wbr>Counters</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#begintiming" class="tsd-kind-icon">begin<wbr>Timing</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#clear" class="tsd-kind-icon">clear</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#clearall" class="tsd-kind-icon">clear<wbr>All</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#close" class="tsd-kind-icon">close</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#configure" class="tsd-kind-icon">configure</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#dump" class="tsd-kind-icon">dump</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#endtiming" class="tsd-kind-icon">end<wbr>Timing</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#get" class="tsd-kind-icon">get</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#getall" class="tsd-kind-icon">get<wbr>All</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#getinterval" class="tsd-kind-icon">get<wbr>Interval</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#increment" class="tsd-kind-icon">increment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#incrementone" class="tsd-kind-icon">increment<wbr>One</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#isopen" class="tsd-kind-icon">is<wbr>Open</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#last" class="tsd-kind-icon">last</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#open" class="tsd-kind-icon">open</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="count.prometheuscounters.html#save" class="tsd-kind-icon">save</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#setinterval" class="tsd-kind-icon">set<wbr>Interval</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="count.prometheuscounters.html#setreferences" class="tsd-kind-icon">set<wbr>References</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#stats" class="tsd-kind-icon">stats</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#timestamp" class="tsd-kind-icon">timestamp</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="count.prometheuscounters.html#timestampnow" class="tsd-kind-icon">timestamp<wbr>Now</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="count.prometheuscounters.html#update" class="tsd-kind-icon">update</a>
 							</li>
 						</ul>
 					</li>
