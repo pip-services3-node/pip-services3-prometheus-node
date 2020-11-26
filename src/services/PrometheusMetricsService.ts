@@ -26,14 +26,14 @@ import { PrometheusCounterConverter } from '../count/PrometheusCounterConverter'
  * 
  * ### References ###
  * 
- * - <code>\*:logger:\*:\*:1.0</code>         (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/log.ilogger.html ILogger]] components to pass log messages
- * - <code>\*:counters:\*:\*:1.0</code>         (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/count.icounters.html ICounters]] components to pass collected measurements
- * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
- * - <code>\*:endpoint:http:\*:1.0</code>          (optional) [[https://rawgit.com/pip-services-node/pip-services3-rpc-node/master/doc/api/classes/services.httpendpoint.html HttpEndpoint]] reference to expose REST operation
+ * - <code>\*:logger:\*:\*:1.0</code>         (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/log.ilogger.html ILogger]] components to pass log messages
+ * - <code>\*:counters:\*:\*:1.0</code>         (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/count.icounters.html ICounters]] components to pass collected measurements
+ * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
+ * - <code>\*:endpoint:http:\*:1.0</code>          (optional) [[https://pip-services3-node.github.io/pip-services3-rpc-node/classes/services.httpendpoint.html HttpEndpoint]] reference to expose REST operation
  * - <code>\*:counters:prometheus:\*:1.0</code>    [[PrometheusCounters]] reference to retrieve collected metrics
  * 
- * @see [[https://rawgit.com/pip-services-node/pip-services3-rpc-node/master/doc/api/classes/services.restservice.html RestService]]
- * @see [[https://rawgit.com/pip-services-node/pip-services3-rpc-node/master/doc/api/classes/clients.restclient.html RestClient]]
+ * @see [[https://pip-services3-node.github.io/pip-services3-rpc-node/classes/services.restservice.html RestService]]
+ * @see [[https://pip-services3-node.github.io/pip-services3-rpc-node/classes/clients.restclient.html RestClient]]
  * 
  * ### Example ###
  * 
