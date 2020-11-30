@@ -1,10 +1,10 @@
-# <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Pip.Services Prometheus components for Node.js
+# <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Prometheus components for Node.js
 
 This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
 The module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both in client mode through PushGateway, and as a service.
 
-This module contains the following packages:
+The module contains the following packages:
 - **Build** - the default factories for constructing components.
 - **Count** - components of counters (metrics) with sending data to Prometheus via PushGateway
 - **Services** - components of the service for reading counters (metrics) by the Prometheus service
