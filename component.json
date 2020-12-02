@@ -1,6 +1,6 @@
 {
-    "name": "pip-services3-prometheus",
+    "name": "pip-services3-prometheus-node",
     "registry": "pipdevs",
     "version": "3.0.5",
-    "build": "0"
+    "build": 0
 }
