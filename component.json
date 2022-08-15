@@ -1,6 +1,14 @@
 {
-    "name": "pip-services3-prometheus-node",
-    "registry": "pipdevs",
+    "name":  "pip-services3-prometheus-node",
+    "type": "module",
+    "language": "node",
     "version": "3.0.5",
-    "build": 0
+    "build": 0,
+    "registry": "pipdevs",
+    "artifacts": [
+        {
+            "name":  "<name>",
+            "type": "npm"
+        }
+    ]
 }
